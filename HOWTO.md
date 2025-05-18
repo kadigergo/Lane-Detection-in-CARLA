@@ -1,17 +1,17 @@
 
 # we need Ubuntu 20.04 LTS WSL
-wsl --install -d Ubuntu-20.04
-wsl -d Ubuntu-20.04
+- wsl --install -d Ubuntu-20.04
+- wsl -d Ubuntu-20.04
 
 
 # install pyenv + python 3.8.5
-sudo apt update
-sudo apt install -y software-properties-common build-essential \
+- sudo apt update
+- sudo apt install -y software-properties-common build-essential \
     libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev \
     curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
     libffi-dev liblzma-dev git
 
-curl https://pyenv.run | bash
+- curl https://pyenv.run | bash
 
 
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
