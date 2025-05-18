@@ -8,7 +8,7 @@ import numpy as np
 import shutil
 import os
 import tensorflow as tf
-from keras import backend as K
+from tensorflow.keras import backend as K
 import random
 import matplotlib
 import matplotlib.pyplot as plt
@@ -21,12 +21,12 @@ if __name__ == "__main__":
     fix_data.rename_sort_data()
     fix_data.create_val_set(0.2)
 
-    visualize_img(filepath, 2)
-    fig = plt.figure(figsize = (20, 10)) 
-    plt.bar(["Train", "Test"], [len(os.listdir(os.path.join(filepath, "train"))), len(os.listdir(os.path.join(filepath, "test")))],
-            color="maroon")
-    matplotlib.rc('xtick', labelsize=20) 
-    matplotlib.rc('ytick', labelsize=20) 
+ #   visualize_img(filepath, 2)
+ #   fig = plt.figure(figsize = (20, 10)) 
+ #   plt.bar(["Train", "Test"], [len(os.listdir(os.path.join(filepath, "train"))), len(os.listdir(os.path.join(filepath, "test")))],
+ #           color="maroon")
+ #   matplotlib.rc('xtick', labelsize=20) 
+ #   matplotlib.rc('ytick', labelsize=20) 
 
     split_data = SplitData(filepath)
     split_data.resize_img(128,0,30)
@@ -43,6 +43,7 @@ if __name__ == "__main__":
 
     class DisplayCallback(tf.keras.callbacks.Callback):
         def on_epoch_end(self, epoch, logs=None):
+            return True
             choose_rand = random.randint(0,int(np.array(X_test).ravel().shape[0])//128//128)
             prediction = np.array(X_test[choose_rand]).reshape(1,128,128,1)
             plt.figure(figsize=(15, 15))
@@ -66,6 +67,7 @@ if __name__ == "__main__":
 
     model.train_model(filepath=filepath, X_train=X_train, y_train=y_train, 
                     X_val=X_val, y_val=y_val, epochs=20, display_callback=DisplayCallback())
+#                    X_val=X_val, y_val=y_val, epochs=20)
 
     train_model.evaluate(X_test,y_test)
     model.save_model("path_to_dest.tf")
