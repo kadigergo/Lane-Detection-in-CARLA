@@ -1,0 +1,19 @@
+# suggested by chatgpt
+wheel
+
+# based on https://github.com/kadigergo/Lane-Detection-in-CARLA?tab=readme-ov-file
+#tensorflow==2.4.0
+#tensorflow-gpu==2.4.0
+tensorflow[and-cuda]==2.4.0 ?? 
+#Keras==2.3.0
+Pillow==8.1.0
+opencv-python==4.5.1.48
+matplotlib==3.3.3
+numpy==1.19.5
+
+# suggested by chatgpt
+tensorboard==2.4.0
+protobuf==3.20.3
+typing-extensions==3.7.4.3
+typeguard<3
+tensorflow-addons==0.12.1

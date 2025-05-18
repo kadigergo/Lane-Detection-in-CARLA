@@ -3,12 +3,12 @@
 
 import numpy as np 
 import os
-from keras.models import *
-from keras.layers import *
-from keras.optimizers import *
-from keras.callbacks import ModelCheckpoint, LearningRateScheduler, ReduceLROnPlateau, EarlyStopping
-from keras import backend as keras
-from keras import backend as K
+from tensorflow.keras.models import *
+from tensorflow.keras.layers import *
+from tensorflow.keras.optimizers import *
+from tensorflow.keras.callbacks import ModelCheckpoint, LearningRateScheduler, ReduceLROnPlateau, EarlyStopping
+from tensorflow.keras import backend as keras
+from tensorflow.keras import backend as K
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import tensorflow_addons as tfa
@@ -106,10 +106,11 @@ class UNet_Model:
                                      verbose=1)
                                                     
             
+        batch_size = 8 # originally 32
         if self.model_loaded:
-            self.loaded_model.fit(x=X_train, y=y_train, validation_data=(X_val,y_val), steps_per_epoch=14610//32, epochs=epochs, callbacks=[model_checkpoint_callback, reducelr, display_callback], verbose=1)      
+            self.loaded_model.fit(x=X_train, y=y_train, validation_data=(X_val,y_val), steps_per_epoch=len(X_train)//batch_size, epochs=epochs, callbacks=[model_checkpoint_callback, reducelr, display_callback], verbose=1)      
         else:
-            self.model.fit(x=X_train, y=y_train, validation_data=(X_val,y_val), steps_per_epoch=14610//32, epochs=epochs, callbacks=[model_checkpoint_callback, reducelr, display_callback], verbose=1)           
+            self.model.fit(x=X_train, y=y_train, validation_data=(X_val,y_val), steps_per_epoch=len(X_train)//batch_size, epochs=epochs, callbacks=[model_checkpoint_callback, reducelr, display_callback], verbose=1)           
 
     def test_predict(self, X_test, y_test, idx, model_filepath=None):
         if self.model_loaded:
