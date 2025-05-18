@@ -69,5 +69,9 @@
 `sudo apt-get install libcublas-12-5`
 
 # cleanup: 
+```
 sudo apt-get remove -y cuda-cccl-11-8 cuda-command-line-tools-11-8 cuda-compiler-11-8 cuda-cudart-11-8 cuda-cudart-dev-11-8  cuda-cuobjdump-11-8 cuda-cupti-11-8 cuda-cupti-dev-11-8 cuda-cuxxfilt-11-8 cuda-documentation-11-8 cuda-driver-dev-11-8 cuda-gdb-11-8 cuda-keyring cuda-memcheck-11-8 cuda-nsight-11-8 cuda-nsight-compute-11-8 cuda-nsight-systems-11-8 cuda-nvcc-11-8 cuda-nvdisasm-11-8 cuda-nvml-dev-11-8 cuda-nvprof-11-8 cuda-nvprune-11-8 cuda-nvprune-11-8 cuda-nvrtc-11-8 cuda-nvrtc-dev-11-8 cuda-nvtx-11-8 cuda-nvvp-11-8 cuda-profiler-api-11-8 cuda-sanitizer-11-8 cuda-toolkit-11-8-config-common cuda-toolkit-11-config-common cuda-toolkit-12-config-common cuda-toolkit-12-3-config-common cuda-toolkit-config-common libcusolver-11-0 libcusolver10 libcublas-12-5
+```
+```
  sudo dpkg --purge  cuda-cccl-11-8 cuda-command-line-tools-11-8 cuda-compiler-11-8 cuda-cudart-11-8 cuda-cudart-dev-11-8  cuda-cuobjdump-11-8 cuda-cupti-11-8 cuda-cupti-dev-11-8 cuda-cuxxfilt-11-8 cuda-documentation-11-8 cuda-driver-dev-11-8 cuda-gdb-11-8 cuda-keyring cuda-memcheck-11-8 cuda-nsight-11-8 cuda-nsight-compute-11-8 cuda-nsight-systems-11-8 cuda-nvcc-11-8 cuda-nvdisasm-11-8 cuda-nvml-dev-11-8 cuda-nvprof-11-8 cuda-nvprune-11-8 cuda-nvprune-11-8 cuda-nvrtc-11-8 cuda-nvrtc-dev-11-8 cuda-nvtx-11-8 cuda-nvvp-11-8 cuda-profiler-api-11-8 cuda-sanitizer-11-8 cuda-toolkit-11-8-config-common cuda-toolkit-11-config-common cuda-toolkit-12-config-common cuda-toolkit-12-3-config-common cuda-toolkit-config-common libcusolver-11-0 libcusolver10 libcublas-12-5
+```
